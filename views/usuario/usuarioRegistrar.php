@@ -3,7 +3,7 @@
         <?php mostrarAcceso(); ?>
         <br/><br/>
         <div id="izquierda">
-            <form name="registro" id="registro" method="POST"
+            <form name="registro" id="registro" method="post"
                   action="<?php echo ACTION_USUARIO_NUEVO; ?>"
                   onsubmit="return validarRegistro(this);">
 

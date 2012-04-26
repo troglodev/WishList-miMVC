@@ -9,6 +9,7 @@ class Valida {
     private $email; // = $_POST['email'];
     private $fecha;
     private $descripcion;
+    private $id;
     private $mensaje;
 
     public static function singleton() {
@@ -25,6 +26,7 @@ class Valida {
         @$this->email = $_POST['email'];
         @$this->fecha = $_POST['fecha'];
         @$this->descripcion = $_POST['descripcion'];
+        @$this->id=$_POST['id'];
         $this->mensaje = '';
     }
 
@@ -46,7 +48,8 @@ class Valida {
 
         return array('mensaje' => $this->mensaje,
             'fecha' => $this->fecha,
-            'descripcion' => $this->descripcion
+            'descripcion' => $this->descripcion,
+            'id'=>  $this->id
         );
     }
 

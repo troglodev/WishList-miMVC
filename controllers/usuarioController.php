@@ -17,9 +17,9 @@ class UsuarioController extends ControllerBase {
 
     public function registrar() {
         self::set();
-        $variables = $this->validator->formUserRegister();
-        if (!empty($variables['mensaje'])) {
-            $this->mostrarFormulario($variables);
+        $this->variables= $this->validator->formUserRegister();
+        if (!empty($this->variables['mensaje'])) {
+            $this->mostrarFormulario($this->variables);
         } else {
             $this->registrarBD();
         }
@@ -30,30 +30,28 @@ class UsuarioController extends ControllerBase {
             $this->modelo->insertarUsuario($this->usuario, $this->password1);
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
-            $variables = array('mensaje' => 'El usuario ya existe');
-            $this->mostrarFormulario($variables);
+            $this->variables['mensaje'] =  'El usuario ya existe';
+            $this->mostrarFormulario($this->variables['mensaje']);
         }
     }
 
     public function acceder() {
         self::set();
-        $variables = $this->validator->formUserAccess();
-        if (!empty($variables['mensaje'])) {
-            $this->view->show(URL_INICIO, $variables);
+        $this->variables = $this->validator->formUserAccess();
+        if (!empty($this->variables['mensaje'])) {
+            $this->view->show(URL_INICIO, $this->variables);
         } else {
             $this->login();
         }
     }
 
     public function login() {
-        require RUTA_MODELOS . MODELO_USUARIO;
-        $model = new UsuarioModel();
-        if ($model->validacionCorrecta($this->usuario, $this->password1)) {
+        if ($this->modelo->validacionCorrecta($this->usuario, $this->password1)) {
             $_SESSION['user'] = $this->usuario;
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
-            $variables = array('mensaje' => 'No existe el usuario.');
-            $this->view->show(URL_INICIO, $variables);
+            $this->variables['mensaje'] =  'No existe el usuario.';
+            $this->view->show(URL_INICIO, $this->variables);
         }
     }
 

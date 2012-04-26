@@ -8,11 +8,13 @@
                           action="<?php echo ACTION_DESEO_GUARDAR_ID . $item['id'] ?>">
                         Descripcion:
                         <input type="text" name="descripcion"
-                               value="<?php echo isset($variables['usuario']) ? $variables['usuario'] : '' ?>"
-                               <!--value="<?php echo $item['desc'] ?>"/>--><br/>
+                               value="<?php echo isset($variables['descripcion']) ? $variables['descripcion'] : $item['desc']; ?>"/><br/>
+                               <!--value="<?php //echo $item['desc'] ?>"/><br/>
+                               -->
+
                         Fecha:
-                        <input type="text" name="fecha"
-                               value="<?php echo date_format(new DateTime($item['date']), 'd-m-Y') ?>"/><br/>
+                        <input id="datepicker" type="text" name="fecha"
+                               value="<?php echo isset($variables['fecha']) ? $variables['fecha'] : date_format(new DateTime($item['date']), 'd-m-Y'); ?>"/><br/>
                         <input type="hidden" name="id"
                                value="<?php echo $item['id'] ?>"/>
                         <input type="submit" name="Submit"
@@ -21,11 +23,11 @@
                     <?php } ?>
                 </form>
                 <div id="falloAcceso">
-                <?php
-                echo '<br/><br/><br/>';
-                echo isset($variables['mensaje']) ? $variables['mensaje'] : '';
-                ?>
-            </div>
+                    <?php
+                    echo '<br/><br/><br/>';
+                    echo isset($variables['mensaje']) ? $variables['mensaje'] : '';
+                    ?>
+                </div>
             </div>
         </div>
         <?php require(RUTA_INC . HTML_DERECHA) ?>

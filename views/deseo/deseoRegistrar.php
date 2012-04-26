@@ -3,12 +3,12 @@
         <?php mostrarAcceso() ?>
         <div id="izquierda">
             <div id="deseo">
-                <form name="deseo" method="POST" action="<?PHP echo ACTION_DESEO_GUARDAR ?>">
+                <form name="deseo" method="post" action="<?PHP echo ACTION_DESEO_GUARDAR ?>">
                     Descripcion:
                     <input type="text" name="descripcion"
                            value="<?php echo isset($variables['descripcion']) ? $variables['descripcion'] : ''; ?>"/><br/>
                     Fecha:
-                    <input type="text" name="fecha"
+                    <input id="datepicker" type="text" name="fecha"
                            value="<?php echo isset($variables['fecha']) ? $variables['fecha'] : ''; ?>"/><br/>
                     <input type="submit" name="Submit" value="Lo quiero"/>
                     <div id="falloDeseo"><?php echo isset($variables['mensaje']) ? $variables['mensaje'] : ''; ?>

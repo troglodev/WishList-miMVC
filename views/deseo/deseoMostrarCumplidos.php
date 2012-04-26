@@ -3,8 +3,8 @@
         <?php mostrarAcceso() ?>
         <div id="izquierda">
             <div id="titular">Titulo</div>
-            <?php if ($vars != 0) { ?>
-                <form action="#" method="POST" onsubmit="return validarDeseo(this);">
+
+                <form action="#" method="post" onsubmit="return validarDeseo(this);">
                     <?php foreach ($variables['items'] as $item) { ?>
                         <?php $idnum = $item['id'] ?>
                         <div id="deseo">
@@ -18,7 +18,6 @@
                         </div>
                     <?php } ?>
                 </form>
-            <?php } ?>
         </div>
         <?php require(RUTA_INC . HTML_DERECHA) ?>
         <?php require(RUTA_INC . HTML_PIE) ?>

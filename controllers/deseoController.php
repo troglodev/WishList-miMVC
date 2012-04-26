@@ -18,7 +18,9 @@ class DeseoController extends ControllerBase {
             }
         } else {
             if (!empty($this->variables['mensaje'])) {
-                $this->view->show('deseo/deseoEditar.php', $this->variables);
+                //$this->variables['id']=$this->id;
+               // $this->view->show('deseo/deseoEditar.php', $this->variables);
+                $this->editar();
             } else {
                 $this->modificarDeseo();
             }

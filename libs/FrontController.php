@@ -11,7 +11,7 @@ class FrontController {
         }
 
         $configurador = Config::singleton();
-        $ini_config = parse_ini_file(BD_INI_CONFIG, true);
+        $ini_config = parse_ini_file(CONFIG_BD_INI, true);
 
         foreach ($ini_config as $key => $value) {
             $configurador->set($key, $value);
