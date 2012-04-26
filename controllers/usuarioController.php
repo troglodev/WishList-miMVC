@@ -7,6 +7,10 @@ class UsuarioController extends ControllerBase {
     private $password2;
     private $email;
 
+    /**
+     *
+     * @param Array $parametros
+     */
     public function mostrarFormulario($parametros = null) {
         $this->view->show(VISTA_USUARIO_REGISTRAR, $parametros);
     }
