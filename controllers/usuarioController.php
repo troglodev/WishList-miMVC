@@ -3,9 +3,9 @@
 class UsuarioController extends ControllerBase {
 
     private $usuario;
-    private $password1; // = $_POST['userpassword'];
-    private $password2; // = $_POST['userpassword2'];
-    private $email; // = $_POST['email'];
+    private $password1;
+    private $password2;
+    private $email;
     private $valida;
 
     public function mostrarFormulario($parametros = null) {
@@ -27,12 +27,13 @@ class UsuarioController extends ControllerBase {
     public function registrarBD() {
         require RUTA_MODELOS . MODELO_USUARIO;
         $model = new UsuarioModel();
+
         if (!$model->existeUsuario($this->usuario)) {
             $model->insertarUsuario($this->usuario, $this->password1);
-            $this->cambiaHeader('' . ACTION_DESEO_MOSTRAR);
+            $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
-            $parametros = array('mensaje' => 'El usuario ya existe');
-            $this->mostrarFormulario($parametros);
+            $variables = array('mensaje' => 'El usuario ya existe');
+            $this->mostrarFormulario($variables);
         }
     }
 
@@ -53,10 +54,10 @@ class UsuarioController extends ControllerBase {
         $model = new UsuarioModel();
         if ($model->validacionCorrecta($this->usuario, $this->password1)) {
             $_SESSION['user'] = $this->usuario;
-            $this->cambiaHeader('' . ACTION_DESEO_MOSTRAR);
+            $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
-            $parametros = array('mensaje' => 'No existe el usuario.');
-            $this->view->show(URL_INICIO, $parametros);
+            $variables = array('mensaje' => 'No existe el usuario.');
+            $this->view->show(URL_INICIO, $variables);
         }
     }
 
@@ -73,10 +74,6 @@ class UsuarioController extends ControllerBase {
         @$this->password1 = $_POST['userpassword'];
         @$this->password2 = $_POST['userpassword2'];
         @$this->email = $_POST['email'];
-    }
-
-    public function cambiaHeader($ruta) {
-        header('Location: ' . $ruta);
     }
 
 }

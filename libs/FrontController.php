@@ -40,6 +40,7 @@ class FrontController {
             return false;
         }
 
+        require(RUTA_MODELOS.MODELO_DESEO);
         @session_start();
         $controller = new $controllerName();
         $controller->$actionName();

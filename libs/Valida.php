@@ -30,7 +30,7 @@ class Valida {
 
     /**
      *
-     * @return string 
+     * @return string
      */
     public function formWish() {
         $this->descripcion = filter_var($this->descripcion, FILTER_SANITIZE_STRING);
@@ -44,12 +44,15 @@ class Valida {
         if (!@checkdate($array_fecha[1], $array_fecha[0], $array_fecha[2]))
             $this->mensaje.= 'Introduzca una fecha correcta.<br/>';
 
-        return '';
+        return array('mensaje' => $this->mensaje,
+            'fecha' => $this->fecha,
+            'descripcion' => $this->descripcion
+        );
     }
 
     /**
      *
-     * @return string 
+     * @return string
      */
     public function formUserAccess() {
         $this->usuario = filter_var($this->usuario, FILTER_SANITIZE_STRING);
@@ -61,7 +64,7 @@ class Valida {
 
     /**
      *
-     * @return string 
+     * @return string
      */
     public function formUserRegister() {
         $this->usuario = filter_var($this->usuario, FILTER_SANITIZE_STRING);

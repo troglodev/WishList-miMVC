@@ -2,52 +2,40 @@
 
 class DeseoController extends ControllerBase {
 
-    public function incluirRequireYSesion() {
-        require RUTA_MODELOS . MODELO_DESEO;
-        return new DeseoModel();
-    }
+    private $fecha;
+    private $descripcion;
+    private $id = null;
+    private $valida;
+    private $variables;
 
     public function guardar() {
-        $fecha = $_POST['fecha'];
-        $desc = $_POST['descripcion'];
-        $id = $_POST['id'];
-        $valida = new Valida();
-        $mensaje = $valida->formWish($fecha, $desc);
-        //Nuevo
-        if (!isset($id)) {
-            if (!$mensaje) {
-                $this->insertarDeseo();
+        self::set();
+        $this->valida = Valida::singleton();
+        $this->variables = $this->valida->formWish();
+
+        if ($this->id == null) {
+            if (!empty($this->variables['mensaje'])) {
+                $this->view->show('deseo/deseoRegistrar.php', $this->variables);
             } else {
-                $parametros = array('mensaje' => $mensaje,
-                    'fecha' => $_POST['fecha'],
-                    'descripcion' => $_POST['descripcion']
-                );
-                $this->view->show('deseo/deseoRegistrar.php', $parametros);
+                $this->insertarDeseo();
             }
         } else {
-            //Edicion
-            if (!$mensaje) {
-                $this->modificarDeseo();
+            if (!empty($this->variables['mensaje'])) {
+                $this->view->show('deseo/deseoEditar.php', $this->variables);
             } else {
-                $parametros = array('mensaje' => $mensaje,
-                    'fecha' => $_POST['fecha'],
-                    'descripcion' => $_POST['descripcion']
-                );
-                $this->view->show('deseo/deseoEditar.php', $parametros);
+                $this->modificarDeseo();
             }
         }
     }
 
     public function mostrar() {
-        $model = $this->incluirRequireYSesion();
-        $items = $model->getPendingWishes();
-        $this->view->show("deseo/deseoMostrar.php", $items);
+        $this->variables['items'] = $this->modelo->getPendingWishes();
+        $this->view->show("deseo/deseoMostrar.php", $this->variables);
     }
 
     public function mostrarCumplidos() {
-        $model = $this->incluirRequireYSesion();
-        $items = $model->getDoneWishes();
-        $this->view->show("deseo/deseoMostrarCumplidos.php", $items);
+        $this->variables['items'] = $this->modelo->getDoneWishes();
+        $this->view->show("deseo/deseoMostrarCumplidos.php", $this->variables);
     }
 
     public function nuevo($mensaje = null) {
@@ -57,49 +45,48 @@ class DeseoController extends ControllerBase {
     /*     * *************************************** */
 
     public function editar() {
-        $model = $this->incluirRequireYSesion();
-        $items = $model->getWishById();
-        $this->view->show("deseo/deseoEditar.php", $items);
+        $this->variables['items'] = $this->modelo->getWishById();
+        $this->view->show("deseo/deseoEditar.php", $this->variables);
     }
 
 //update
     public function modificarDeseo() {
-        $model = $this->incluirRequireYSesion();
-        if ($model->modifyWish()) {
-            header('Location: ' . BOOTSTRAP . URL_CONTROLADOR . 'deseo' . URL_ACCION . 'mostrar');
+        if ($this->modelo->modifyWish()) {
+            $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         }
     }
 
     public function cumplir() {
-        $model = $this->incluirRequireYSesion();
-        if ($model->setWishAsDone()) {
-            header('Location: ' . BOOTSTRAP . URL_CONTROLADOR . 'deseo' . URL_ACCION . 'mostrar');
+        if ($this->modelo->setWishAsDone()) {
+            $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         }
     }
 
 //insert
     public function insertarDeseo() {
-        $model = $this->incluirRequireYSesion();
-        if ($model->insertarDeseoBD()) {
-            header('Location: ' . BOOTSTRAP . URL_CONTROLADOR . 'deseo' . URL_ACCION . 'mostrar');
+        if ($this->modelo->insertarDeseoBD()) {
+            $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         }
     }
 
 //delete
     public function eliminar() {
-        $model = $this->incluirRequireYSesion();
-        if ($model->eliminarDeseoBD()) {
-            header('Location: ' . BOOTSTRAP . URL_CONTROLADOR . 'deseo' . URL_ACCION . 'mostrar');
+        if ($this->modelo->eliminarDeseoBD()) {
+            $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         }
     }
 
+    public function __construct() {
+        parent::__construct();
 
-    /*
-     * public function cabeceras(){
+    }
 
-      header('Location: ' . BOOTSTRAP . URL_CONTROLADOR . 'deseo' . URL_ACCION . 'mostrar');
-      }
-     */
+    public function set() {
+        @$this->fecha = $_POST['fecha'];
+        @$this->descripcion = $_POST['descripcion'];
+        @$this->id = $_POST['id'];
+    }
+
 }
 
 ?>

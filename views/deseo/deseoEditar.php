@@ -3,12 +3,13 @@
         <?php mostrarAcceso() ?>
         <div id="izquierda">
             <div id="deseo">
-                <?php foreach ($vars as $item) { ?>
+                <?php foreach ($variables['items'] as $item) { ?>
                     <form method="post" onsubmit="return validarDeseo(this);"
                           action="<?php echo ACTION_DESEO_GUARDAR_ID . $item['id'] ?>">
                         Descripcion:
                         <input type="text" name="descripcion"
-                               value="<?php echo $item['desc'] ?>"/><br/>
+                               value="<?php echo isset($variables['usuario']) ? $variables['usuario'] : '' ?>"
+                               <!--value="<?php echo $item['desc'] ?>"/>--><br/>
                         Fecha:
                         <input type="text" name="fecha"
                                value="<?php echo date_format(new DateTime($item['date']), 'd-m-Y') ?>"/><br/>
@@ -19,6 +20,12 @@
                         <p id="mensaje"></p>
                     <?php } ?>
                 </form>
+                <div id="falloAcceso">
+                <?php
+                echo '<br/><br/><br/>';
+                echo isset($variables['mensaje']) ? $variables['mensaje'] : '';
+                ?>
+            </div>
             </div>
         </div>
         <?php require(RUTA_INC . HTML_DERECHA) ?>

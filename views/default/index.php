@@ -1,6 +1,6 @@
 <body>
     <div id="content">
-        <?php isset($mensaje) ? mostrarAcceso($mensaje) : mostrarAcceso(); ?>
+        <?php isset($variables['mensaje']) ? mostrarAcceso($variables['mensaje']) : mostrarAcceso(); ?>
         <br/><br/>
         <div id="inicio">
             <center>

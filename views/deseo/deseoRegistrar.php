@@ -5,11 +5,13 @@
             <div id="deseo">
                 <form name="deseo" method="POST" action="<?PHP echo ACTION_DESEO_GUARDAR ?>">
                     Descripcion:
-                    <input type="text" name="descripcion" value="<?php echo isset($descripcion) ? $descripcion : ''; ?>"/><br/>
+                    <input type="text" name="descripcion"
+                           value="<?php echo isset($variables['descripcion']) ? $variables['descripcion'] : ''; ?>"/><br/>
                     Fecha:
-                    <input type="text" name="fecha" value="<?php echo isset($fecha) ? $fecha : ''; ?>"/><br/>
+                    <input type="text" name="fecha"
+                           value="<?php echo isset($variables['fecha']) ? $variables['fecha'] : ''; ?>"/><br/>
                     <input type="submit" name="Submit" value="Lo quiero"/>
-                    <div id="falloDeseo"><?php echo isset($mensaje) ? $mensaje : ''; ?>
+                    <div id="falloDeseo"><?php echo isset($variables['mensaje']) ? $variables['mensaje'] : ''; ?>
                     </div>
                 </form>
             </div>

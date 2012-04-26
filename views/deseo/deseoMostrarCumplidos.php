@@ -5,7 +5,7 @@
             <div id="titular">Titulo</div>
             <?php if ($vars != 0) { ?>
                 <form action="#" method="POST" onsubmit="return validarDeseo(this);">
-                    <?php foreach ($vars as $item) { ?>
+                    <?php foreach ($variables['items'] as $item) { ?>
                         <?php $idnum = $item['id'] ?>
                         <div id="deseo">
                             <span id="titulo">
