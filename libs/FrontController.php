@@ -3,21 +3,20 @@
 class FrontController {
 
     public static function main() {
-        require_once 'libs/SPDO.php';
-        require_once 'libs/ControllerBase.php';
-        require_once 'libs/ModelBase.php';
-        require_once 'libs/View.php';
-        require_once 'libs/Valida.php';
-        require_once 'libs/Config.php';
 
         require 'config/config.php';
 
-        $config = Config::singleton();
-        $ini_config = parse_ini_file('config/config.ini', true);
+        foreach ($array_classes as $clase) {
+            require_once $clase;
+        }
+
+        $configurador = Config::singleton();
+        $ini_config = parse_ini_file(BD_INI_CONFIG, true);
 
         foreach ($ini_config as $key => $value) {
-            $config->set($key, $value);
+            $configurador->set($key, $value);
         }
+
         if (!empty($_GET['controlador']))
             $controllerName = $_GET['controlador'] . 'Controller';
         else
@@ -39,8 +38,6 @@ class FrontController {
             trigger_error($controllerName . '->' . $actionName . ' no existe', E_USER_NOTICE);
             return false;
         }
-
-
 
         @session_start();
         $controller = new $controllerName();
