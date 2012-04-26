@@ -1,0 +1,18 @@
+<body>
+    <div id="content">
+        <?php isset($mensaje) ? mostrarAcceso($mensaje) : mostrarAcceso(); ?>
+        <br/><br/>
+        <div id="inicio">
+            <h2>
+                <center>
+                    Todav&iacute;a no tienes tu propio WishList?<br/><br/>
+                    <a href="<?php echo ACTION_USUARIO_MOSTRARFORM ?>">
+                        Cons&iacute;guelo ya!
+                    </a>
+                </center>
+            </h2>
+        </div>
+        <?php require('/../html/pie.inc.php') ?>
+    </div>
+</body>
+</html>

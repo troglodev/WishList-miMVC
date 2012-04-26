@@ -1,0 +1,190 @@
+body{
+    background:lightblue;
+    font-family: sans-serif;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+a:hover{
+    border-bottom:1px dotted white;
+}
+
+
+img, .medio {
+    vertical-align: middle;
+}
+#content{
+    width:90%;
+    margin: 0 auto;
+
+}
+
+#acceso{
+    width:99%;
+    height:53px;
+    float:left;
+    background: steelblue;
+    margin-top:2%;
+    font-size: small;
+    line-height: 2;
+    padding:8px 8px 8px 0px;
+    border-radius: 0.7em;
+    color:white;
+}
+
+#acceso form, #hola{
+    float:right;
+    margin-top:5px;
+    padding-left:10px;
+    color:white;
+
+}
+
+#hola{
+    font-weight: bold;
+}
+
+#acceso h3
+{
+    line-height:0.3em;
+    margin-left:10px;
+    float:left;
+}
+
+.acceso {
+    width: 70px;
+}
+
+#izquierda{
+    float:left;
+    width: 64%;
+    margin-top:2%;
+    min-height:400px;
+    border-radius: 0.4em;
+    background: steelblue;
+}
+#derecha{
+    float:right;
+    width:30%;
+    margin-top:2%;
+    min-height:400px;
+    border-radius: 0.4em;
+    background: steelblue;
+}
+
+#deseo{
+    padding:2%;
+    margin:1%;
+    min-height:150px;
+    width:43%;
+    float:left;
+    border:1px solid cornflowerblue;
+    border-radius: 0.3em;
+    color:white;
+}
+
+#deseo:hover{
+    background: cornflowerblue;
+    border-radius: 0.7em;
+}
+#guardar{
+    float:left;
+}
+
+#derecha ul {
+    list-style: none;
+    padding:0;
+    margin-top:20px;
+    padding-left:10px;
+
+}
+#derecha li {
+    width:100%;
+    height:30px;
+    padding-top: 5px;
+}
+#derecha li:hover{
+    width:100%;
+    background: cornflowerblue;
+}
+#derecha li a:hover{
+    border:none;
+}
+
+
+#falloAceso{
+    float:left;
+    display:block;
+    background: salmon;
+    font-size: small;
+
+    margin:30px;
+
+
+}
+#falloRegistro{
+    float:left;
+    background: salmon;
+    font-size: small;
+    border-radius: 0.7em;
+    margin:30px;
+    display:block;
+    width:270px;
+}
+
+
+#registro{
+    float:left;
+    width:175px;
+
+    margin-left:10%;
+    font-size:small;
+    color: white;
+}
+
+#registrar, #limpiar{
+    margin-top:20px;
+}
+
+
+#limpiar{
+    float:right;
+}
+label{
+    display:block;
+    margin-top:15px;
+}
+
+#pie{
+    width:99%;
+
+    float:left;
+    background: steelblue;
+    margin: 2% auto;
+    padding:8px 3px 8px 8px;
+    font-size: small;
+    min-height:30px;
+    border-radius: 0.7em;
+    color:white;
+}
+
+#inicio{
+    float:left;
+    width: 96%;
+    margin-top:2%;
+    min-height:400px;
+    border-radius: 0.4em;
+    background: steelblue;
+    padding:2%;
+}
+
+#titular{
+    width:100%;
+    margin: 0px;
+    display:block;
+    border-bottom:1px solid lightblue;
+    padding-left: 10px;
+    margin-top:10px;
+}

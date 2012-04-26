@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <?php mostrarHead() ?>
+    <body>
+        <div id="content">
+            <?php mostrarAcceso(); ?>
+            <br/><br/>
+            <div id="izquierda">
+                <form name="registro" id="registro" method="POST"
+                      action="index.php?controlador=usuario&accion=registrar"
+                      onsubmit="return validarRegistro(this);">
+                    <label for="user">Usuario:</label>
+                    <input type="text" name="user"
+                           value="<?php echo isset($usuario) ? $usuario : '' ?>"/><br/>
+                    <label for="userpassword">Password:</label>
+                    <input type="password" name="userpassword" /><br/>
+                    <label for="userpassword2">Repita Password:</label>
+                    <input type="password" name="userpassword2" /><br/>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email"
+                           value="<?php echo isset($email) ? $email : ''; ?>"/><br/>
+                    <input type="submit" id="registrar" name="Submit" value="Registrar"/>
+                    <input type="reset" id="limpiar" value="Limpiar"/>
+                </form>
+                <div id="falloAcceso">
+                    <?php
+                    echo '<br/><br/><br/>';
+                    echo isset($mensaje) ? $mensaje : '';
+                    ?>
+                </div>
+            </div>
+            <?php //mostrarDivDerecha() ?>
+            <?php mostrarPie() ?>
+        </div>
+    </body>
+</html>

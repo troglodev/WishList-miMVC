@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/repos/!svn/ver/4087/fsaiz/whislist-miMVC/libs
+END
+SPDO.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/repos/!svn/ver/4055/fsaiz/whislist-miMVC/libs/SPDO.php
+END
+ModelBase.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/repos/!svn/ver/4040/fsaiz/whislist-miMVC/libs/ModelBase.php
+END
+ControllerBase.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/4040/fsaiz/whislist-miMVC/libs/ControllerBase.php
+END
+Config.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/repos/!svn/ver/4055/fsaiz/whislist-miMVC/libs/Config.php
+END
+FrontController.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/4085/fsaiz/whislist-miMVC/libs/FrontController.php
+END
+View.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/repos/!svn/ver/4077/fsaiz/whislist-miMVC/libs/View.php
+END
+Valida.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/repos/!svn/ver/4087/fsaiz/whislist-miMVC/libs/Valida.php
+END

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <?php mostrarHead() ?>
+    <body>
+        <div id="content">
+            <?php mostrarDivAcceso() ?>
+            <div id="izquierda">
+                <div id="titular">Titulo</div>
+                <?php if ($vars != 0) { ?>
+                    <form name="deseo" action="#" method="POST"
+                          onsubmit="return validarDeseo(this);">
+                              <?php foreach ($vars as $item) { ?>
+                                  <?php $idnum = $item['id'] ?>
+                            <div id="deseo">
+                                <span id="titulo">
+                                    <?php echo date_format(new DateTime($item['date']), 'd-m-Y') ?><br/>
+                                </span>
+                                <span id="<?php echo $idnum ?>">
+                                    <?php echo $item['desc'] ?>
+                                </span>
+                                <br/><br/><br/>
+
+                            </div>
+                        <?php } ?>
+                    </form>
+                <?php } ?>
+            </div>
+            <?php mostrarDivDerecha() ?>
+            <?php mostrarPie() ?>
+        </div>
+    </body>
+</html>

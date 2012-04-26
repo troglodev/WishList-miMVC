@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <?php mostrarHead() ?>
+    <body>
+        <div id="content">
+            <?php mostrarAcceso() ?>
+            <div id="izquierda">
+                                        <?php var_dump($_POST) ?>
+                <div id="titular">Titulo</div>
+                <?php if ($vars != 0) { ?>
+                    <form action="#" method="post"
+                          onsubmit="return validarDeseo(this);">
+                              <?php foreach ($vars as $item) { ?>
+                                  <?php $idnum = $item['id'] ?>
+                            <div id="deseo">
+                                <span id="titulo">
+                                    <?php echo date_format(new DateTime($item['date']), 'd-m-Y') ?><br/>
+                                </span>
+                                <a href="index.php?controlador=deseo&accion=editar&id=<?php echo $idnum ?>" onclick="return confirmarEditar();">
+                                    <img src="views/estatico/img/note_edit.png" href="index.php" />
+                                </a>
+                                <a href="index.php?controlador=deseo&accion=eliminar&id=<?php echo $idnum ?>" onclick="return confirmarEliminar();">
+                                    <img src="views/estatico/img/heart_delete.png" alt="Eliminar"/>
+                                </a>
+                                <a href="index.php?controlador=deseo&accion=cumplir&id=<?php echo $idnum ?>" onclick="return alert('Enhorabuena');">
+                                    <img src="views/estatico/img/accept.png"/>
+                                </a>
+                                <br/>
+                                <span id="<?php echo $idnum ?>">
+                                    <?php echo $item['desc'] ?>
+                                </span>
+                            </div>
+                        <?php } ?>
+                    </form>
+                <?php } ?>
+            </div>
+            <?php mostrarDivDerecha() ?>
+            <?php mostrarPie() ?>
+        </div>
+    </body>
+</html>

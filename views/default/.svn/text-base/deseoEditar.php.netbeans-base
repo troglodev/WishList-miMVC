@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <?php mostrarHead() ?>
+    <body>
+        <div id="content">
+            <?php mostrarAcceso() ?>
+            <div id="izquierda">
+                <div id="deseo">
+                    <?php foreach ($vars as $item) { ?>
+                        <form method="post"
+                              action="index.php?controlador=deseo&accion=guardar&id=<?php echo $item['id'] ?>"
+                              onsubmit="return validarDeseo(this);">
+                            Descripcion:
+                            <input type="text" name="descripcion" value="<?php echo $item['desc'] ?>"/><br/>
+                            Fecha:
+                            <input type="text" name="fecha" value="<?php echo date_format(new DateTime($item['date']), 'd-m-Y') ?>"/><br/>
+                            <input type="hidden" name="id" value="<?php echo $item['id'] ?>"/>
+                            <input type="submit" name="Submit" value="Confirmar"/>
+                            <p id="mensaje"></p>
+                        <?php } ?>
+                    </form>
+                </div>
+            </div>
+            <?php mostrarDivDerecha() ?>
+            <?php mostrarPie() ?>
+        </div>
+    </body>
+</html>
