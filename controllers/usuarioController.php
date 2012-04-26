@@ -6,7 +6,6 @@ class UsuarioController extends ControllerBase {
     private $password1;
     private $password2;
     private $email;
-    private $valida;
 
     public function mostrarFormulario($parametros = null) {
         $this->view->show(VISTA_USUARIO_REGISTRAR, $parametros);
@@ -14,9 +13,7 @@ class UsuarioController extends ControllerBase {
 
     public function registrar() {
         self::set();
-        $this->valida = Valida::singleton();
-        $variables = $this->valida->formUserRegister();
-
+        $variables = $this->validator->formUserRegister();
         if (!empty($variables['mensaje'])) {
             $this->mostrarFormulario($variables);
         } else {
@@ -25,7 +22,6 @@ class UsuarioController extends ControllerBase {
     }
 
     public function registrarBD() {
-
         if (!$this->modelo->existeUsuario($this->usuario)) {
             $this->modelo->insertarUsuario($this->usuario, $this->password1);
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
@@ -37,9 +33,7 @@ class UsuarioController extends ControllerBase {
 
     public function acceder() {
         self::set();
-        $this->valida = Valida::singleton();
-        $variables = $this->valida->formUserAccess();
-
+        $variables = $this->validator->formUserAccess();
         if (!empty($variables['mensaje'])) {
             $this->view->show(URL_INICIO, $variables);
         } else {

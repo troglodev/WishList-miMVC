@@ -5,14 +5,11 @@ class DeseoController extends ControllerBase {
     private $fecha;
     private $descripcion;
     private $id = null;
-    private $valida;
     private $variables;
 
     public function guardar() {
         self::set();
-        $this->valida = Valida::singleton();
-        $this->variables = $this->valida->formWish();
-
+        $this->variables = $this->validator->formWish();
         if ($this->id == null) {
             if (!empty($this->variables['mensaje'])) {
                 $this->view->show('deseo/deseoRegistrar.php', $this->variables);

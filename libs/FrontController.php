@@ -40,8 +40,8 @@ class FrontController {
             return false;
         }
 
-        require(RUTA_MODELOS.MODELO_DESEO);
-        require(RUTA_MODELOS.MODELO_USUARIO);
+
+
         @session_start();
         $controller = new $controllerName();
         $controller->$actionName();
