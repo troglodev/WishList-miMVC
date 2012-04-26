@@ -25,11 +25,9 @@ class UsuarioController extends ControllerBase {
     }
 
     public function registrarBD() {
-        require RUTA_MODELOS . MODELO_USUARIO;
-        $model = new UsuarioModel();
 
-        if (!$model->existeUsuario($this->usuario)) {
-            $model->insertarUsuario($this->usuario, $this->password1);
+        if (!$this->modelo->existeUsuario($this->usuario)) {
+            $this->modelo->insertarUsuario($this->usuario, $this->password1);
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
             $variables = array('mensaje' => 'El usuario ya existe');
