@@ -7,7 +7,7 @@ abstract class ControllerBase {
 
     public function __construct() {
         $this->view = new View();
-        $this->modelo = new DeseoModel();
+
     }
 
     public function cambiaHeader($ruta) {

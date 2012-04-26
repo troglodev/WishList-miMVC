@@ -78,7 +78,7 @@ class DeseoController extends ControllerBase {
 
     public function __construct() {
         parent::__construct();
-
+$this->modelo = new DeseoModel();
     }
 
     public function set() {

@@ -74,6 +74,11 @@ class UsuarioController extends ControllerBase {
         @$this->email = $_POST['email'];
     }
 
+    public function __construct() {
+        parent::__construct();
+        $this->modelo = new UsuarioModel();
+    }
+
 }
 
 ?>
