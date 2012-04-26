@@ -76,6 +76,7 @@ class UsuarioController extends ControllerBase {
 
     public function __construct() {
         parent::__construct();
+        require(RUTA_MODELOS . MODELO_USUARIO);
         $this->modelo = new UsuarioModel();
     }
 
