@@ -31,7 +31,7 @@
                 ?>
             </div>
         </div>
-        <?php require('html/pie.inc.php') ?>
+        <?php require(RUTA_INC . HTML_PIE) ?>
     </div>
 </body>
 </html>

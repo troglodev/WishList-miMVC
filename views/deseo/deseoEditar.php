@@ -21,8 +21,8 @@
                 </form>
             </div>
         </div>
-        <?php require('/../html/derecha.inc.php') ?>
-        <?php include('../html/pie.inc.php') ?>
+        <?php require(RUTA_INC . HTML_DERECHA) ?>
+        <?php include(RUTA_INC . HTML_PIE) ?>
     </div>
 </body>
 </html>

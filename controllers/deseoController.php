@@ -93,17 +93,7 @@ class DeseoController extends ControllerBase {
         }
     }
 
-    public function __construct() {
-        parent::__construct();
-    }
 
-    public static function singleton() {
-        if (self::$instance == null) {
-            self::$instance = new self();
-        }
-        return self::$instance;
-    }
-private static $instance=null;
     /*
      * public function cabeceras(){
 

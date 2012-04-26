@@ -41,7 +41,7 @@ class FrontController {
         }
 
         @session_start();
-        $controller = $controllerName::singleton();
+        $controller = new $controllerName();
         $controller->$actionName();
     }
 
