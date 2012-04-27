@@ -3,13 +3,35 @@
         <?php mostrarAcceso(); ?>
         <br/><br/>
         <div id="izquierda">
-            <form name="registro" id="registro" method="POST"
-                  action="<?php echo ACTION_USUARIO_NUEVO; ?>"
-                  onsubmit="return validarRegistro(this);">
 
-                <label for="user">Usuario:</label>
+            <script>
+                $(document).ready(function(){
+                    $("#form-usuario-registro").validate({
+                        rules: {
+                            name: "required",
+                            email: {
+                                required: true,
+                                email: true
+                            }
+                        },
+                        messages: {
+                            name: "Please specify your name",
+                            email: {
+                                required: "We need your email address to contact you",
+                                email: "Your email address must be in the format of name@domain.com"
+                            }
+                        },
+                        debug:true
+                    });
+                });
+            </script>
+            <form name="registro" id="form-usuario-registro" method="post"
+                  action="<?php echo ACTION_USUARIO_NUEVO; ?>"
+                  <!--onsubmit="return validarRegistro(this);"-->>
+
+                  <label for="user">Usuario:</label>
                 <input type="text" name="user"
-                       value="<?php echo isset($usuario) ? $usuario : '' ?>"/><br/>
+                       value="<?php echo isset($variables['usuario']) ? $variables['usuario'] : '' ?>"/><br/>
 
                 <label for="userpassword">Password:</label>
                 <input type="password" name="userpassword" /><br/>
@@ -19,7 +41,7 @@
 
                 <label for="email">Email:</label>
                 <input type="text" name="email"
-                       value="<?php echo isset($email) ? $email : ''; ?>"/><br/>
+                       value="<?php echo isset($variables['email']) ? $variables['email'] : ''; ?>"/><br/>
 
                 <input type="submit" id="registrar" name="Submit" value="Registrar"/>
                 <input type="reset" id="limpiar" value="Limpiar"/>
@@ -27,11 +49,11 @@
             <div id="falloAcceso">
                 <?php
                 echo '<br/><br/><br/>';
-                echo isset($mensaje) ? $mensaje : '';
+                echo isset($variables['mensaje']) ? $variables['mensaje'] : '';
                 ?>
             </div>
         </div>
-        <?php require('/../inc/pie.inc.php') ?>
+        <?php require(RUTA_INC . HTML_PIE) ?>
     </div>
 </body>
 </html>

@@ -1,0 +1,40 @@
+$(document).ready(function(){
+
+
+
+    $("#form-usuario-registro").validate({
+        rules: {
+            name: "required",
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            name: "Please specify your name",
+            email: {
+                required: "We need your email address to contact you",
+                email: "Your email address must be in the format of name@domain.com"
+            }
+        },
+        debug:true
+    })
+
+
+/**
+    function validarRegistro(F){
+
+        F.validate({
+            rules: {
+                user: {
+                    required: true,
+                    minlength: 2
+                }
+            },
+            messages: {
+                user: {
+                    required: "We need your email address to contact you",
+                    minlength: "At least 3 characters required!"
+                }
+*/
+});

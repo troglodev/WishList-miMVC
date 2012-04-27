@@ -1,18 +1,18 @@
 <body>
     <div id="content">
-        <?php isset($mensaje) ? mostrarAcceso($mensaje) : mostrarAcceso(); ?>
+        <?php isset($variables['mensaje']) ? mostrarAcceso($variables['mensaje']) : mostrarAcceso(); ?>
         <br/><br/>
         <div id="inicio">
-            <h2>
-                <center>
+            <center>
+                <h2>
                     Todav&iacute;a no tienes tu propio WishList?<br/><br/>
-                    <a href="<?php echo ACTION_USUARIO_MOSTRARFORM ?>">
+                    <a href="<?php echo ACTION_USUARIO_MOSTRARFORM; ?>">
                         Cons&iacute;guelo ya!
                     </a>
-                </center>
-            </h2>
+                </h2>
+            </center>
         </div>
-        <?php require('/../html/pie.inc.php') ?>
+        <?php require(RUTA_INC . HTML_PIE); ?>
     </div>
 </body>
 </html>

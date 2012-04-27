@@ -1,14 +1,14 @@
 10
 
 dir
-4087
+4094
 https://oftailor.hcuv.sacyl.es/svn/repos/fsaiz/whislist-miMVC/js
 https://oftailor.hcuv.sacyl.es/svn/repos
 
 
 
-2012-04-26T09:41:46.544054Z
-4070
+2012-04-27T06:36:30.392323Z
+4094
 fsaiz
 
 
@@ -33,16 +33,23 @@ a1a9b815-8384-4005-9755-30b473f58c51
 
 0
 
-valida.js
+additional-methods.js
+file
+0
+
+
+add
+
+jquery-1.7.1.min.js
 file
 
 
 
 
-2012-04-25T08:29:46.000000Z
-a5dcf147754276ce81d99ee9768fc1b6
-2012-04-26T09:41:46.544054Z
-4070
+2012-01-10T11:45:02.000000Z
+ddb84c1587287b2df08966081ef063bf
+2012-04-27T06:36:30.392323Z
+4094
 fsaiz
 
 
@@ -65,5 +72,165 @@ fsaiz
 
 
 
-3528
+93868
+
+jquery-ui-1.8.19.custom.min.js
+file
+
+
+
+
+2012-04-16T10:39:56.000000Z
+09014b4334d66cf038c13a0135256b61
+2012-04-27T06:36:30.392323Z
+4094
+fsaiz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+206663
+
+jquery.ui.datepicker-es.js
+file
+4095
+
+
+
+2012-04-27T08:39:06.888000Z
+469e658bdff7e5297d8c43871dfcf209
+2012-04-27T09:48:39.546707Z
+4095
+fsaiz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+925
+
+jquery.validate.min.js
+file
+4095
+
+
+
+2011-10-06T14:21:38.000000Z
+c593e70ef041ab387fefad5fe38a724c
+2012-04-27T09:48:39.546707Z
+4095
+fsaiz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+21601
+
+valida.js
+file
+4096
+
+
+
+2012-04-27T09:51:36.296000Z
+f3ef8a7fcd73f933f678ae9d9869fc57
+2012-04-27T09:53:40.710561Z
+4096
+fsaiz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3523
+
+validate.js
+file
+4096
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
 

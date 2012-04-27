@@ -10,6 +10,7 @@ function estaVacio(q){
         return true
     }
     return false
+
 }
 
 function contieneEspacios(q){
@@ -25,7 +26,7 @@ function contieneEspacios(q){
 function esUnNumero(q){
     if (!isNaN(q)){
         mensaje="El nombre no puede ser un numero."
-        return true 
+        return true
     }
     return false
 }
@@ -61,9 +62,9 @@ function passwordsIguales(q1,q2){
 }
 
 function validarRegistro(F) {
-    if ( validaUsuarioRegistro(F.user.value) && 
+    if ( validaUsuarioRegistro(F.user.value) &&
         validaPasswordRegistro(F.userpassword.value) &&
-        passwordsIguales(F.userpassword2.value,F.userpassword.value)) { 
+        passwordsIguales(F.userpassword2.value,F.userpassword.value)) {
         return true
     } else {
         document.getElementById("falloRegistro").innerHTML=html1 + mensaje +html2
@@ -72,7 +73,7 @@ function validarRegistro(F) {
 }
 
 function validarAcceso(F){
-    if ( estaVacio(F.user.value) || 
+    if ( estaVacio(F.user.value) ||
         estaVacio(F.userpassword.value)) {
 
         document.getElementById("falloAcceso").innerHTML=html1+mensaje+html2
@@ -115,8 +116,8 @@ function validarDeseo(F){
 }
 
 function fechaCorrecta(fecha){
-    var Fecha= new String(fecha) 
-    //var RealFecha= new Date() 
+    var Fecha= new String(fecha)
+    //var RealFecha= new Date()
 
     var year= new String(Fecha.substring(Fecha.lastIndexOf("-")+1,Fecha.length))
     var mes= new String(Fecha.substring(Fecha.indexOf("-")+1,Fecha.lastIndexOf("-")))

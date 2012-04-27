@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 52
-/svn/repos/!svn/ver/4085/fsaiz/whislist-miMVC/config
+/svn/repos/!svn/ver/4094/fsaiz/whislist-miMVC/config
 END
 config.ini
 K 25
@@ -9,9 +9,15 @@ svn:wc:ra_dav:version-url
 V 63
 /svn/repos/!svn/ver/4068/fsaiz/whislist-miMVC/config/config.ini
 END
+bd.ini
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/repos/!svn/ver/4094/fsaiz/whislist-miMVC/config/bd.ini
+END
 config.php
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/svn/repos/!svn/ver/4085/fsaiz/whislist-miMVC/config/config.php
+/svn/repos/!svn/ver/4094/fsaiz/whislist-miMVC/config/config.php
 END

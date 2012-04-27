@@ -114,28 +114,40 @@ img, .medio {
 }
 
 
-#falloAceso{
+#falloAcceso{
     float:left;
-    display:block;
-    background: salmon;
-    font-size: small;
 
-    margin:30px;
+    color: #e46c6d;
+    /*background: salmon;
+    font-size: small;
+    margin:0px;*/
 
 
 }
 #falloRegistro{
     float:left;
-    background: salmon;
+    /*background: salmon;
     font-size: small;
     border-radius: 0.7em;
-    margin:30px;
-    display:block;
-    width:270px;
+    margin:30px;*/
+
+    display:inline;
+    color: #e46c6d;
+}
+#falloRegistro label{
+    margin-top:35px;
+    font-size: small;
+}
+#falloAcceso label{
+    margin-top:5px;
+    margin-right: 20px;
+    font-size: small;
+    color: #e46c6d;
+    display:inline;
 }
 
 
-#registro{
+#form-usuario-registro{
     float:left;
     width:175px;
 
@@ -152,10 +164,7 @@ img, .medio {
 #limpiar{
     float:right;
 }
-label{
-    display:block;
-    margin-top:15px;
-}
+
 
 #pie{
     width:99%;
@@ -188,3 +197,28 @@ label{
     padding-left: 10px;
     margin-top:10px;
 }
+
+label{
+    display:block;
+    margin-top:15px;
+}
+.error label{
+    display:inline;
+    color: #e46c6d;
+}
+/*
+.error ul{
+    list-style: square;
+    padding: 5px;
+    font-size: 11px;
+}
+.error ul li{
+    list-style-position: inside;
+    line-height: 1.6em;
+}
+.error ul li strong{
+    color: #e46c6d;
+}
+.error.valid ul li strong{
+    color: #93d72e;
+}*/

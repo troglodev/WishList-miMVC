@@ -1,11 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/svn/repos/!svn/ver/4083/fsaiz/whislist-miMVC/views/html
+/svn/repos/!svn/ver/4094/fsaiz/whislist-miMVC/views/html
 END
 derecha.inc.php
 K 25
 svn:wc:ra_dav:version-url
 V 72
 /svn/repos/!svn/ver/4083/fsaiz/whislist-miMVC/views/html/derecha.inc.php
+END
+pie.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/4094/fsaiz/whislist-miMVC/views/html/pie.inc.php
+END
+acceso.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/4094/fsaiz/whislist-miMVC/views/html/acceso.inc.php
+END
+head.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/4096/fsaiz/whislist-miMVC/views/html/head.inc.php
 END

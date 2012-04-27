@@ -1,9 +1,42 @@
 <body>
+    <script>
+        $(document).ready(function(){
+            $("#form-deseo").validate({
+                rules:{
+                    descripcion:{
+                        required:true
+                        //alphanumeric:true
+                    },
+                    fecha:{
+                        required:true,
+                        alphanumeric:true
+                    }
+                },
+                messages:{
+                    descripcion:{
+                        required:"Rellene la descripción."
+                        //alphanumeric:"Solo se permiten letras y números."
+                    },
+                    fecha:{
+                        required:"Rellene la fecha.",
+                        alphanumeric:"Solo se permiten letras y números."
+                    }
+                },
+                highlight: function(element, errorClass) {
+                    $("#ir").fadeIn("fast");
+                    $("#falloAcceso").fadeIn("fast");
+                },
+                errorLabelContainer: "#falloAcceso",
+                debug:true,
+                onsubmit: true
+            });
+        });
+    </script>
     <div id="content">
         <?php mostrarAcceso() ?>
         <div id="izquierda">
             <div id="deseo">
-                <form name="deseo" method="post" action="<?PHP echo ACTION_DESEO_GUARDAR ?>">
+                <form id="form-deseo" name="deseo" method="post" action="<?PHP echo ACTION_DESEO_GUARDAR ?>">
                     Descripcion:
                     <input type="text" name="descripcion"
                            value="<?php echo isset($variables['descripcion']) ? $variables['descripcion'] : ''; ?>"/><br/>

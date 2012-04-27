@@ -4,6 +4,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
             <title>wishlist-miMVC</title>
-            <!--<script type="text/javascript" src="views/estatico/js/valida.js"></script>-->
+
+            <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
+            <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
             <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+            <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.19.custom.css" />
+            <script type="text/javascript" src="js/jquery.ui.datepicker-es.js"></script>
+            <script>
+                $(function() {
+                    $( "#datepicker" ).datepicker({
+                        "showAnim": "slide"
+                        , "dateFormat":"dd-mm-yy"
+                        ,"minDate": "0"
+                        //,"maxDate": "+2Y"
+                        ,"changeMonth": true,
+                        "changeYear": true
+                    });
+                });
+
+            </script>
     </head>

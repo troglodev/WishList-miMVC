@@ -3,21 +3,22 @@
 class View {
 
     function __construct() {
-        
+
     }
 
-    public function show($name, $vars = array()) {
+    public function show($name, $variables =null) {
         $path = 'views/' . $name;
         if (file_exists($path) == false) {
             trigger_error('Template `' . $path . '` does not exist.', E_USER_NOTICE);
             return false;
         }
+        /*
         if (is_array($vars)) {
             foreach ($vars as $key => $value) {
                 $$key = $value;
             }
         }
-
+*/
         require_once RUTA_INC . HTML_HEAD;
         require_once RUTA_INC . HTML_ACCESO;
 
