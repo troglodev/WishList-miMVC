@@ -6,8 +6,7 @@ $(document).ready(function(){
             //alphanumeric:true
             },
             fecha:{
-                required:true,
-                alphanumeric:true
+                required:true
             }
         },
         messages:{
@@ -16,8 +15,7 @@ $(document).ready(function(){
             //alphanumeric:"Solo se permiten letras y números."
             },
             fecha:{
-                required:"Rellene la fecha.",
-                alphanumeric:"Solo se permiten letras y números."
+                required:"Rellene la fecha."
             }
         },
         highlight: function(element, errorClass) {
@@ -26,6 +24,6 @@ $(document).ready(function(){
         },
         errorLabelContainer: "#falloAcceso",
         debug:true,
-        onsubmit: true
+        onsubmit: false
     });
 });
