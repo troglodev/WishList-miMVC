@@ -11,7 +11,7 @@
 
             <link rel="stylesheet" type="text/css" href="css/estilo.css" />
             <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.19.custom.css" />
-            <script type="text/javascript" src="js/jquery.ui.datepicker-es.js"></script>
+
             <script type="text/javascript" src="js/additional-methods.js"></script>
             <script>
                 $(function() {

@@ -1,4 +1,6 @@
 <body>
+    <script type="text/javascript" src="js/jquery.ui.datepicker-es.js"></script>
+    <script type="text/javascript" src="js/validar.deseo.js"></script>
     <div id="content">
         <?php mostrarAcceso() ?>
         <div id="izquierda">
@@ -9,8 +11,8 @@
                         Descripcion:
                         <input type="text" name="descripcion"
                                value="<?php echo isset($variables['descripcion']) ? $variables['descripcion'] : $item['desc']; ?>"/><br/>
-                               <!--value="<?php //echo $item['desc'] ?>"/><br/>
-                               -->
+                               <!--value="<?php //echo $item['desc']   ?>"/><br/>
+                        -->
 
                         Fecha:
                         <input id="datepicker" type="text" name="fecha"
