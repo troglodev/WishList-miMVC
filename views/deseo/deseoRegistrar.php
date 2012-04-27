@@ -18,8 +18,8 @@
                 </form>
             </div>
         </div>
-        <?php require(RUTA_INC . HTML_DERECHA) ?>
-        <?php require(RUTA_INC . HTML_PIE) ?>
+        <?php require(HTML_DERECHA) ?>
+        <?php require(HTML_PIE) ?>
     </div>
 </body>
 </html>

@@ -53,8 +53,15 @@ define('MODELO_USUARIO', 'UsuarioModel.php');
 
 
 //VISTAS
+define('VISTA_DESEO_REGISTRAR','deseo/deseoRegistrar.php');
+define('VISTA_DESEO_MOSTRAR','deseo/deseoMostrar.php');
+define('VISTA_DESEO_MOSTRARCUMPLIDOS','deseo/deseoMostrarCumplidos.php');
+define('VISTA_DESEO_EDITAR','deseo/deseoEditar.php');
+
+
+
 define('VISTA_USUARIO_REGISTRAR', 'usuario/usuarioRegistrar.php');
-DEFINE('VISTA_INICIO', 'default/index.php');
+define('VISTA_INICIO', 'default/index.php');
 
 //CONTROLADORES
 define('CONTROLADOR_DESEO', 'deseoController.php');

@@ -19,8 +19,8 @@ class View {
             }
         }
 */
-        require_once RUTA_INC . HTML_HEAD;
-        require_once RUTA_INC . HTML_ACCESO;
+        require_once  HTML_HEAD;
+        require_once  HTML_ACCESO;
 
         include($path);
     }

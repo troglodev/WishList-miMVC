@@ -12,7 +12,7 @@
                 </h2>
             </center>
         </div>
-        <?php require(RUTA_INC . HTML_PIE); ?>
+        <?php require(HTML_PIE); ?>
     </div>
 </body>
 </html>

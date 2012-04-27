@@ -39,7 +39,7 @@ class UsuarioController extends ControllerBase {
         self::set();
         $this->variables = $this->validator->formUserAccess();
         if (!empty($this->variables['mensaje'])) {
-            $this->view->show(URL_INICIO, $this->variables);
+            $this->view->show(VISTA_INICIO, $this->variables);
         } else {
             $this->login();
         }
@@ -51,7 +51,7 @@ class UsuarioController extends ControllerBase {
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
             $this->variables['mensaje'] =  'No existe el usuario.';
-            $this->view->show(URL_INICIO, $this->variables);
+            $this->view->show(VISTA_INICIO, $this->variables);
         }
     }
 
@@ -59,7 +59,7 @@ class UsuarioController extends ControllerBase {
         if (isset($_SESSION['user'])) {
             session_unset();
             session_destroy();
-            $this->view->show(URL_INICIO);
+            $this->view->show(VISTA_INICIO);
         }
     }
 

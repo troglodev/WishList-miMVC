@@ -12,14 +12,12 @@ class DeseoController extends ControllerBase {
         $this->variables = $this->validator->formWish();
         if ($this->id == null) {
             if (!empty($this->variables['mensaje'])) {
-                $this->view->show('deseo/deseoRegistrar.php', $this->variables);
+                $this->view->show(VISTA_DESEO_REGISTRAR, $this->variables);
             } else {
                 $this->insertarDeseo();
             }
         } else {
             if (!empty($this->variables['mensaje'])) {
-                //$this->variables['id']=$this->id;
-               // $this->view->show('deseo/deseoEditar.php', $this->variables);
                 $this->editar();
             } else {
                 $this->modificarDeseo();
@@ -29,23 +27,23 @@ class DeseoController extends ControllerBase {
 
     public function mostrar() {
         $this->variables['items'] = $this->modelo->getPendingWishes();
-        $this->view->show("deseo/deseoMostrar.php", $this->variables);
+        $this->view->show(VISTA_DESEO_MOSTRAR, $this->variables);
     }
 
     public function mostrarCumplidos() {
         $this->variables['items'] = $this->modelo->getDoneWishes();
-        $this->view->show("deseo/deseoMostrarCumplidos.php", $this->variables);
+        $this->view->show(VISTA_DESEO_MOSTRARCUMPLIDOS, $this->variables);
     }
 
     public function nuevo($mensaje = null) {
-        $this->view->show("deseo/deseoRegistrar.php", $mensaje);
+        $this->view->show(VISTA_DESEO_REGISTRAR, $mensaje);
     }
 
     /*     * *************************************** */
 
     public function editar() {
         $this->variables['items'] = $this->modelo->getWishById();
-        $this->view->show("deseo/deseoEditar.php", $this->variables);
+        $this->view->show(VISTA_DESEO_EDITAR, $this->variables);
     }
 
 //update

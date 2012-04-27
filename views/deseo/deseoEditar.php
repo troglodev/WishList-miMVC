@@ -7,7 +7,7 @@
             <div id="deseo">
                 <?php foreach ($variables['items'] as $item) { ?>
                     <form method="post" onsubmit="return validarDeseo(this);"
-                          action="<?php echo ACTION_DESEO_GUARDAR_ID . $item['id'] ?>">
+                          action="<?php echo ACTION_DESEO_GUARDAR_ID.$item['id'] ?>">
                         Descripcion:
                         <input type="text" name="descripcion"
                                value="<?php echo isset($variables['descripcion']) ? $variables['descripcion'] : $item['desc']; ?>"/><br/>
@@ -32,8 +32,8 @@
                 </div>
             </div>
         </div>
-        <?php require(RUTA_INC . HTML_DERECHA) ?>
-        <?php include(RUTA_INC . HTML_PIE) ?>
+        <?php require(HTML_DERECHA) ?>
+        <?php include(HTML_PIE) ?>
     </div>
 </body>
 </html>
