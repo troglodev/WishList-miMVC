@@ -57,17 +57,12 @@ define('VISTA_DESEO_REGISTRAR','deseo/deseoRegistrar.php');
 define('VISTA_DESEO_MOSTRAR','deseo/deseoMostrar.php');
 define('VISTA_DESEO_MOSTRARCUMPLIDOS','deseo/deseoMostrarCumplidos.php');
 define('VISTA_DESEO_EDITAR','deseo/deseoEditar.php');
-
-
-
 define('VISTA_USUARIO_REGISTRAR', 'usuario/usuarioRegistrar.php');
 define('VISTA_INICIO', 'default/index.php');
 
-//CONTROLADORES
-define('CONTROLADOR_DESEO', 'deseoController.php');
-define('CONTROLADOR_INICIO', 'inicioController.php');
-define('CONTROLADOR_USUARIO', 'usuarioController.php');
 
+//CONTROLADORES
+define('CONTROLADOR_INICIO', 'inicioController');
 
 
 //ACCIONES DE LOS CONTROLADORES
@@ -80,21 +75,4 @@ define('ACCION_CUMPLIR_DESEO', 'cumplirDeseo');
 define('ACCION_INSERTAR_DESEO', 'insertarDeseo');
 define('ACCION_ELIMINAR_DESEO', 'eliminarDeseo');
 
-
-
-
-define('CONTROLADOR_PREDEFINIDO', "inicio");
-define('ACCION_PREDEFINIDA', "mostrarInicio");
-
-//define('ruta_inc','inc/');
-define('RUTA_DBH', 'core/bd.php');
-
-define('RUTA_IMAGENES', 'views/estatico/img/');
-
-/*
-  function getConfig($seccion) {
-  $data,parse_ini_file('../config/config.ini', true);
-  return $data[$seccion];
-  }
- */
 ?>

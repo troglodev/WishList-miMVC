@@ -21,12 +21,12 @@ class FrontController {
         if (!empty($_GET['controlador']))
             $controllerName = $_GET['controlador'] . 'Controller';
         else
-            $controllerName = "indexController";
+            $controllerName = 'CONTROLADOR_INICIO';
 
         if (!empty($_GET['accion']))
             $actionName = $_GET['accion'];
         else
-            $actionName = "index";
+            $actionName = 'index';
 
         $controllerPath = 'controllers/' . $controllerName . '.php';
 
