@@ -42,6 +42,7 @@ $(document).ready(function(){
 
         },
         errorLabelContainer: "#falloRegistro",
-        debug:true
+        debug:true,
+        onsubmit: false
     });
 });
