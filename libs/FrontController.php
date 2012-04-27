@@ -1,9 +1,10 @@
 <?php
 
+
 class FrontController {
 
     public static function main() {
-
+     //   xdebug_start_trace('/tmp/fac.xt',XDEBUG_TRACE_HTML);
         require 'config/config.php';
 
         foreach ($array_classes as $clase) {
@@ -38,10 +39,12 @@ class FrontController {
             trigger_error($controllerName . '->' . $actionName . ' no existe', E_USER_NOTICE);
             return false;
         }
-
+   //      xdebug_stop_trace();
         @session_start();
+
         $controller = new $controllerName();
         $controller->$actionName();
+
     }
 
 }
