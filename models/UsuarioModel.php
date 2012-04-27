@@ -6,7 +6,6 @@ class UsuarioModel extends ModelBase {
         $sql = 'INSERT INTO wishers (name, password) VALUES ("' . $u . '","' . $p . '")';
         $num = $this->db->exec($sql);
         if ($num == 1) {
-            /*             * ********************** */
             @session_start();
             $_SESSION['user'] = $u;
         }

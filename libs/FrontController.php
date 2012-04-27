@@ -38,10 +38,10 @@ class FrontController {
             trigger_error($controllerName . '->' . $actionName . ' no existe', E_USER_NOTICE);
             return false;
         }
-            @session_start();
+        @session_start();
         if (!isset($_SESSION['user']) && $controllerName == 'deseoController') {
             require('controllers/indexController.php');
-            $controller=new indexController();
+            $controller = new indexController();
             $controller->error();
         } else {
 

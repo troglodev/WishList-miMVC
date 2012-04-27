@@ -7,11 +7,11 @@
             <div id="deseo">
                 <?php foreach ($variables['items'] as $item) { ?>
                     <form method="post" onsubmit="return validarDeseo(this);"
-                          action="<?php echo ACTION_DESEO_GUARDAR_ID.$item['id'] ?>">
+                          action="<?php echo ACTION_DESEO_GUARDAR_ID . $item['id'] ?>">
                         Descripcion:
                         <input type="text" name="descripcion"
                                value="<?php echo isset($variables['descripcion']) ? $variables['descripcion'] : $item['desc']; ?>"/><br/>
-                               <!--value="<?php //echo $item['desc']   ?>"/><br/>
+                               <!--value="<?php //echo $item['desc']    ?>"/><br/>
                         -->
 
                         Fecha:

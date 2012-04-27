@@ -4,9 +4,9 @@ class Valida {
 
     private static $instance = null;
     private $usuario;
-    private $password1; // = $_POST['userpassword'];
-    private $password2; // = $_POST['userpassword2'];
-    private $email; // = $_POST['email'];
+    private $password1;
+    private $password2;
+    private $email;
     private $fecha;
     private $descripcion;
     private $id;
@@ -26,7 +26,7 @@ class Valida {
         @$this->email = $_POST['email'];
         @$this->fecha = $_POST['fecha'];
         @$this->descripcion = $_POST['descripcion'];
-        @$this->id=$_POST['id'];
+        @$this->id = $_POST['id'];
         $this->mensaje = '';
     }
 
@@ -49,7 +49,7 @@ class Valida {
         return array('mensaje' => $this->mensaje,
             'fecha' => $this->fecha,
             'descripcion' => $this->descripcion,
-            'id'=>  $this->id
+            'id' => $this->id
         );
     }
 

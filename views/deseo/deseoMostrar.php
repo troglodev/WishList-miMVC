@@ -11,13 +11,13 @@
                         <span id="titulo">
                             <?php echo date_format(new DateTime($item['date']), 'd-m-Y') ?><br/>
                         </span>
-                        <a href="<?php echo ACTION_DESEO_EDITAR_ID.$idnum ?>" onclick="return confirmarEditar();">
+                        <a href="<?php echo ACTION_DESEO_EDITAR_ID . $idnum ?>" onclick="return confirmarEditar();">
                             <img src="img/note_edit.png" href="index.php" />
                         </a>
-                        <a href="<?php echo ACTION_DESEO_ELIMINAR_ID.$idnum ?>" onclick="return confirmarEliminar();">
+                        <a href="<?php echo ACTION_DESEO_ELIMINAR_ID . $idnum ?>" onclick="return confirmarEliminar();">
                             <img src="img/heart_delete.png" alt="Eliminar"/>
                         </a>
-                        <a href="<?php echo ACTION_DESEO_CUMPLIR_ID.$idnum ?>" onclick="return alert('Enhorabuena');">
+                        <a href="<?php echo ACTION_DESEO_CUMPLIR_ID . $idnum ?>" onclick="return alert('Enhorabuena');">
                             <img src="img/accept.png"/>
                         </a>
                         <br/>

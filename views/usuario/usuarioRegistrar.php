@@ -8,7 +8,6 @@
 
             <form name="registro" id="form-usuario-registro" method="post"
                   action="<?php echo ACTION_USUARIO_NUEVO; ?>">
-                <!--onsubmit="return validarRegistro(this);"-->
 
                 <label for="user">Usuario:</label>
                 <input type="text" name="user"

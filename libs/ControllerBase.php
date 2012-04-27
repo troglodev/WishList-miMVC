@@ -7,7 +7,7 @@ abstract class ControllerBase {
 
     public function __construct() {
         $this->view = new View();
-        $this->validator=Valida::singleton();
+        $this->validator = Valida::singleton();
     }
 
     public function cambiaHeader($ruta) {

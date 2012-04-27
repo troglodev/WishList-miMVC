@@ -7,6 +7,25 @@ class DeseoController extends ControllerBase {
     private $id = null;
     private $variables;
 
+    public function mostrar() {
+        $this->variables['items'] = $this->modelo->getPendingWishes();
+        $this->view->show(VISTA_DESEO_MOSTRAR, $this->variables);
+    }
+
+    public function mostrarCumplidos() {
+        $this->variables['items'] = $this->modelo->getDoneWishes();
+        $this->view->show(VISTA_DESEO_MOSTRARCUMPLIDOS, $this->variables);
+    }
+
+    public function nuevo($mensaje = null) {
+        $this->view->show(VISTA_DESEO_REGISTRAR, $mensaje);
+    }
+
+    public function editar() {
+        $this->variables['items'] = $this->modelo->getWishById();
+        $this->view->show(VISTA_DESEO_EDITAR, $this->variables);
+    }
+
     public function guardar() {
         self::set();
         $this->variables = $this->validator->formWish();
@@ -25,28 +44,6 @@ class DeseoController extends ControllerBase {
         }
     }
 
-    public function mostrar() {
-        $this->variables['items'] = $this->modelo->getPendingWishes();
-        $this->view->show(VISTA_DESEO_MOSTRAR, $this->variables);
-    }
-
-    public function mostrarCumplidos() {
-        $this->variables['items'] = $this->modelo->getDoneWishes();
-        $this->view->show(VISTA_DESEO_MOSTRARCUMPLIDOS, $this->variables);
-    }
-
-    public function nuevo($mensaje = null) {
-        $this->view->show(VISTA_DESEO_REGISTRAR, $mensaje);
-    }
-
-    /*     * *************************************** */
-
-    public function editar() {
-        $this->variables['items'] = $this->modelo->getWishById();
-        $this->view->show(VISTA_DESEO_EDITAR, $this->variables);
-    }
-
-//update
     public function modificarDeseo() {
         if ($this->modelo->modifyWish()) {
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
@@ -59,14 +56,12 @@ class DeseoController extends ControllerBase {
         }
     }
 
-//insert
     public function insertarDeseo() {
         if ($this->modelo->insertarDeseoBD()) {
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         }
     }
 
-//delete
     public function eliminar() {
         if ($this->modelo->eliminarDeseoBD()) {
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
@@ -80,8 +75,8 @@ class DeseoController extends ControllerBase {
     }
 
     public function set() {
-        @$this->fecha = $_POST['fecha'];
-        @$this->descripcion = $_POST['descripcion'];
+        $this->fecha = $_POST['fecha'];
+        $this->descripcion = $_POST['descripcion'];
         @$this->id = $_POST['id'];
     }
 
