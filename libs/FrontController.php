@@ -1,10 +1,9 @@
 <?php
 
-
 class FrontController {
 
     public static function main() {
-     //   xdebug_start_trace('/tmp/fac.xt',XDEBUG_TRACE_HTML);
+
         require 'config/config.php';
 
         foreach ($array_classes as $clase) {
@@ -21,7 +20,7 @@ class FrontController {
         if (!empty($_GET['controlador']))
             $controllerName = $_GET['controlador'] . 'Controller';
         else
-            $controllerName = 'CONTROLADOR_INICIO';
+            $controllerName = CONTROLADOR_INICIO;
 
         if (!empty($_GET['accion']))
             $actionName = $_GET['accion'];
@@ -39,12 +38,16 @@ class FrontController {
             trigger_error($controllerName . '->' . $actionName . ' no existe', E_USER_NOTICE);
             return false;
         }
-   //      xdebug_stop_trace();
-        @session_start();
+            @session_start();
+        if (!isset($_SESSION['user']) && $controllerName == 'deseoController') {
+            require('controllers/indexController.php');
+            $controller=new indexController();
+            $controller->error();
+        } else {
 
-        $controller = new $controllerName();
-        $controller->$actionName();
-
+            $controller = new $controllerName();
+            $controller->$actionName();
+        }
     }
 
 }

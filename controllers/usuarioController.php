@@ -17,7 +17,7 @@ class UsuarioController extends ControllerBase {
 
     public function registrar() {
         self::set();
-        $this->variables= $this->validator->formUserRegister();
+        $this->variables = $this->validator->formUserRegister();
         if (!empty($this->variables['mensaje'])) {
             $this->mostrarFormulario($this->variables);
         } else {
@@ -30,7 +30,7 @@ class UsuarioController extends ControllerBase {
             $this->modelo->insertarUsuario($this->usuario, $this->password1);
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
-            $this->variables['mensaje'] =  'El usuario ya existe';
+            $this->variables['mensaje'] = 'El usuario ya existe';
             $this->mostrarFormulario($this->variables['mensaje']);
         }
     }
@@ -47,10 +47,11 @@ class UsuarioController extends ControllerBase {
 
     public function login() {
         if ($this->modelo->validacionCorrecta($this->usuario, $this->password1)) {
+
             $_SESSION['user'] = $this->usuario;
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
-            $this->variables['mensaje'] =  'No existe el usuario.';
+            $this->variables['mensaje'] = 'No existe el usuario.';
             $this->view->show(VISTA_INICIO, $this->variables);
         }
     }
@@ -59,8 +60,9 @@ class UsuarioController extends ControllerBase {
         if (isset($_SESSION['user'])) {
             session_unset();
             session_destroy();
-            $this->view->show(VISTA_INICIO);
         }
+       // $this->view->show(VISTA_INICIO);
+        $this->cambiaHeader('index.php');
     }
 
     public function set() {

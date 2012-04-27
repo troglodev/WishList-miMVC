@@ -23,6 +23,7 @@ define('NOMBRE_CONTROLADOR', 'controlador=');
 define('NOMBRE_ACCION', '&accion=');
 
 
+
 //INC de HTML
 define('RUTA_HTML', 'views/html/');
 define('HTML_ACCESO', RUTA_HTML . 'acceso.inc.php');
@@ -62,10 +63,11 @@ define('VISTA_INICIO', 'default/index.php');
 
 
 //CONTROLADORES
-define('CONTROLADOR_INICIO', 'inicioController');
+define('CONTROLADOR_INICIO', 'indexController');
 
 
 //ACCIONES DE LOS CONTROLADORES
+define('ACCION_INDEX','index');
 define('ACCION_NUEVO_DESEO', 'nuevoDeseo');
 define('ACCION_MOSTRAR_DESEO', 'mostrarDeseo');
 define('ACCION_MOSTRAR_CUMPLIDOS', 'mostrarCumplidos');

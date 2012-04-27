@@ -5,6 +5,10 @@
         <div id="inicio">
             <center>
                 <h2>
+                    <span style="color:red">
+                        <?php echo isset($variables['error']) ? $variables['error'] : ''; ?>
+                    </span>
+                    <br/>
                     Todav&iacute;a no tienes tu propio WishList?<br/><br/>
                     <a href="<?php echo ACTION_USUARIO_MOSTRARFORM; ?>">
                         Cons&iacute;guelo ya!
