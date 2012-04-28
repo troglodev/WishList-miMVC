@@ -30,10 +30,6 @@ class Valida {
         $this->mensaje = '';
     }
 
-    /**
-     *
-     * @return string
-     */
     public function formWish() {
         $this->descripcion = filter_var($this->descripcion, FILTER_SANITIZE_STRING);
         if (empty($this->descripcion))
@@ -53,10 +49,6 @@ class Valida {
         );
     }
 
-    /**
-     *
-     * @return string
-     */
     public function formUserAccess() {
         $this->usuario = filter_var($this->usuario, FILTER_SANITIZE_STRING);
         $this->password1 = filter_var($this->password1, FILTER_SANITIZE_STRING);
@@ -65,10 +57,6 @@ class Valida {
             return array('mensaje' => 'Rellene todos los campos.<br/>');
     }
 
-    /**
-     *
-     * @return string
-     */
     public function formUserRegister() {
         $this->usuario = filter_var($this->usuario, FILTER_SANITIZE_STRING);
         $this->password1 = filter_var($this->password1, FILTER_SANITIZE_STRING);

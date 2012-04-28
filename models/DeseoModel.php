@@ -2,7 +2,6 @@
 
 class DeseoModel extends ModelBase {
 
-//Sección SELECT
     public function getWishes($cond) {
         $sql = 'select wishes.id, wishes.desc, wishes.date from wishes where ' . $cond;
         $stmt = $this->db->query($sql);
@@ -26,7 +25,6 @@ class DeseoModel extends ModelBase {
         return $this->getWishes($cond);
     }
 
-//Sección UPDATE
     public function updateWish($set, $cond) {
         $sql = "update wishes set " . $set . " where " . $cond;
         try {

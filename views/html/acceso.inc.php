@@ -20,7 +20,7 @@ function mostrarAcceso($mensaje = null) {
     <?php } else { ?>
         <div id="acceso">
             <h3><a href="index.php"><img src="img/heart.png"/>WishList</a></h3>
-            <form name="logon" id="form-acceso" action="<?php echo ACTION_USUARIO_ACCEDER ?>"
+            <form id="form-acceso" action="<?php echo ACTION_USUARIO_ACCEDER ?>"
                   method="post">
                 Usuario:
                 <input type="text" name="user" class="acceso"/>
