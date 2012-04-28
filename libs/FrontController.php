@@ -41,12 +41,12 @@ class FrontController {
         @session_start();
         if (!isset($_SESSION['user']) && $controllerName == 'deseoController') {
             require('controllers/indexController.php');
-            $controller = new indexController();
-            $controller->error();
+            //$controller = new indexController();
+            error();
         } else {
-
-            $controller = new $controllerName();
-            $controller->$actionName();
+            //require('controllers/'.$controllerName.'.php');
+            //$controller = new $controllerName();
+            $actionName();
         }
     }
 

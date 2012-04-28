@@ -3,12 +3,13 @@
 class IndexController extends ControllerBase {
 
     public function index() {
-        $this->view->show(VISTA_INICIO);
+       // require('libs/View.php');
+        show(VISTA_INICIO);
     }
 
     public function error() {
         $variables['error'] = 'Debes iniciar sesión.';
-        $this->view->show(VISTA_INICIO, $variables);
+        show(VISTA_INICIO, $variables);
     }
 
 }

@@ -1,30 +1,32 @@
 <?php
 
 class UsuarioController extends ControllerBase {
-
-    private $usuario;
-    private $password1;
-    private $password2;
-    private $email;
+    /*
+      private $usuario;
+      private $password1;
+      private $password2;
+      private $email;
+     */
 
     public function acceder() {
-        self::set();
-        $this->variables = $this->validator->formUserAccess();
-        if (!empty($this->variables['mensaje'])) {
-            $this->view->show(VISTA_INICIO, $this->variables);
+        //self::set();
+        $variables = $this->validator->formUserAccess();
+        if (!empty($variables['mensaje'])) {
+            $this->view->show(VISTA_INICIO, $variables);
         } else {
             $this->login();
         }
     }
 
     public function login() {
-        if ($this->modelo->validacionCorrecta($_POST['user'], $_POST['password1'])) {
+        $modelo = llamarModelo();
+        if ($modelo->validacionCorrecta($_POST['user'], $_POST['password1'])) {
 
-            $_SESSION['user'] =$_POST['user'];
+            $_SESSION['user'] = $_POST['user'];
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
-            $this->variables['mensaje'] = 'No existe el usuario.';
-            $this->view->show(VISTA_INICIO, $this->variables);
+            $variables['mensaje'] = 'No existe el usuario.';
+            $this->view->show(VISTA_INICIO, $variables);
         }
     }
 
@@ -41,36 +43,39 @@ class UsuarioController extends ControllerBase {
     }
 
     public function registrar() {
-        self::set();
-        $this->variables = $this->validator->formUserRegister();
-        if (!empty($this->variables['mensaje'])) {
-            $this->mostrarFormulario($this->variables);
+        // self::set();
+        $variables = $this->validator->formUserRegister();
+        if (!empty($variables['mensaje'])) {
+            $this->mostrarFormulario($variables);
         } else {
             $this->registrarBD();
         }
     }
 
     public function registrarBD() {
-        if (!$this->modelo->existeUsuario($this->usuario)) {
-            $this->modelo->insertarUsuario($this->usuario, $this->password1);
+        $modelo = llamarModelo();
+        if (!$modelo->existeUsuario($this->usuario)) {
+            $modelo->insertarUsuario($this->usuario, $this->password1);
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
-            $this->variables['mensaje'] = 'El usuario ya existe';
-            $this->mostrarFormulario($this->variables['mensaje']);
+            $variables['mensaje'] = 'El usuario ya existe';
+            $this->mostrarFormulario($variables['mensaje']);
         }
     }
 
-    public function set() {
-        $this->usuario = $_POST['user'];
-        $this->password1 = $_POST['userpassword'];
-        $this->password2 = $_POST['userpassword2'];
-        $this->email = $_POST['email'];
-    }
+    /*
+      public function set() {
+      $this->usuario = $_POST['user'];
+      $this->password1 = $_POST['userpassword'];
+      $this->password2 = $_POST['userpassword2'];
+      $this->email = $_POST['email'];
+      }
+     */
 
-    public function __construct() {
-        parent::__construct();
+    public function llamarModelo() {
         require(RUTA_MODELOS . MODELO_USUARIO);
-        $this->modelo = new UsuarioModel();
+        $modelo = new UsuarioModel();
+        return $modelo;
     }
 
 }
