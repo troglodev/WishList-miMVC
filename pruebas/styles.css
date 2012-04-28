@@ -1,5 +1,11 @@
 body{
     background: lightblue;
+    font-family: "HelveticaNeue","Helvetica Neue","Helvetica","Arial","sans-serif";
+}
+
+a{
+    color:white;
+    text-decoration: none;
 }
 
 #page{
@@ -16,21 +22,17 @@ body{
     padding:10px;
 }
 
-a{
-    color:white;
-    text-decoration: none;
-}
+
 
 #banner{
 
-
+width:70%;
     float:left;
 
 }
 
 #login{
     display:inline;
-    float:right;
 }
 
 #content{
@@ -51,4 +53,8 @@ a{
 
 
     background:steelblue;
+}
+
+#acceso input{
+    color:red;
 }
