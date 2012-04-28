@@ -1,0 +1,54 @@
+body{
+    background: lightblue;
+}
+
+#page{
+    background: white;
+    width:95%;
+    margin: 0 auto;
+
+}
+#header{
+
+    margin-top: 10px;
+    background:steelblue;
+    height:50px;
+    padding:10px;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+#banner{
+
+
+    float:left;
+
+}
+
+#login{
+    display:inline;
+    float:right;
+}
+
+#content{
+
+}
+
+#main{
+    width: 65%;
+    float:left;
+}
+
+#sidebar{
+    width:35%;
+    display: inline;
+}
+
+#footer{
+
+
+    background:steelblue;
+}
