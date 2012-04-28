@@ -18,9 +18,9 @@ class UsuarioController extends ControllerBase {
     }
 
     public function login() {
-        if ($this->modelo->validacionCorrecta($this->usuario, $this->password1)) {
+        if ($this->modelo->validacionCorrecta($_POST['user'], $_POST['password1'])) {
 
-            $_SESSION['user'] = $this->usuario;
+            $_SESSION['user'] =$_POST['user'];
             $this->cambiaHeader(ACTION_DESEO_MOSTRAR);
         } else {
             $this->variables['mensaje'] = 'No existe el usuario.';
